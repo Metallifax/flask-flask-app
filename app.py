@@ -2,9 +2,24 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+all_posts = [
+  {
+    'title': 'Post 1',
+    'content': 'Post 1 content here! Woweee!!!'
+  },
+  {
+    'title': 'Post 2',
+    'content': 'Post 2 content here! Omergerd!!!'
+  },
+]
+
 @app.route('/')
 def index():
   return render_template('index.html')
+
+@app.route('/posts')
+def posts():
+  return render_template('posts.html', posts=all_posts)
 
 @app.route('/onlyget', methods=['GET'])
 def get_req():
