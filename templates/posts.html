@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}Posts{% endblock title %}
-{% block body %}
+{% block content %}
   <h1>All Posts</h1>
   {% for post in posts %}
     <h2>{{ post.title }}</h2>
@@ -14,4 +14,4 @@
 
     <p>{{ post.content }}</p>
   {% endfor %}
-{% endblock body %}
+{% endblock content %}
